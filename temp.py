@@ -1,5 +1,8 @@
 import os
 os.system('pip install yfinance')
+os.system('pip install matplotlib')
+os.system('pip install seaborn')
+os.system('pip install scipy')
 import yfinance as yf
 import streamlit as st
 import numpy as np
@@ -165,6 +168,7 @@ if st.sidebar.button("Run Optimization"):
     st.pyplot(fig)
 
     # Chart 2: Correlation Matrix
+    correlation_matrix = returns.corr()
     fig, ax = plt.subplots(figsize=(10, 6))
     cax = ax.matshow(correlation_matrix, cmap='coolwarm')
     fig.colorbar(cax)
@@ -172,7 +176,6 @@ if st.sidebar.button("Run Optimization"):
     ax.set_yticks(range(len(correlation_matrix.index)))
     ax.set_xticklabels(correlation_matrix.columns, rotation=90)
     ax.set_yticklabels(correlation_matrix.index)
-
 
     # Chart 3: Historical Returns
     st.subheader("Historical Returns")
