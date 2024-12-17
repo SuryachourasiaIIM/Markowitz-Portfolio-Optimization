@@ -1,12 +1,13 @@
 import os
+os.system('pip matplotlib')
 os.system('pip install yfinance')
-os.system('pip install matplotlib')
-os.system('pip install seaborn')
 os.system('pip install scipy')
-import yfinance as yf
+os.system('pip install seaborn')
 import streamlit as st
 import numpy as np
 import pandas as pd
+import seaborn as sns
+import yfinance as yf
 from scipy.optimize import minimize
 import matplotlib
 matplotlib.use("Agg")  # Use the Agg backend
@@ -168,14 +169,11 @@ if st.sidebar.button("Run Optimization"):
     st.pyplot(fig)
 
     # Chart 2: Correlation Matrix
+    st.subheader("Correlation Matrix")
     correlation_matrix = returns.corr()
     fig, ax = plt.subplots(figsize=(10, 6))
-    cax = ax.matshow(correlation_matrix, cmap='coolwarm')
-    fig.colorbar(cax)
-    ax.set_xticks(range(len(correlation_matrix.columns)))
-    ax.set_yticks(range(len(correlation_matrix.index)))
-    ax.set_xticklabels(correlation_matrix.columns, rotation=90)
-    ax.set_yticklabels(correlation_matrix.index)
+    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', ax=ax)
+    st.pyplot(fig)
 
     # Chart 3: Historical Returns
     st.subheader("Historical Returns")
