@@ -91,7 +91,7 @@ st.sidebar.markdown("""
                      """,
                      unsafe_allow_html=True)
 st.sidebar.header("Portfolio Inputs")
-tickers = st.sidebar.text_input("Enter Tickers (comma-separated)", "AAPL,MSFT,GOOGL,AMZN").split(',')
+tickers = st.sidebar.text_input("Enter Tickers (comma-separated) Use .NS suffix for NSE tickers eg: ITC.NS", "AAPL,MSFT,GOOGL,AMZN").split(',')
 start_date = st.sidebar.date_input("Start Date", value=pd.to_datetime("2022-01-01"))
 end_date = st.sidebar.date_input("End Date", value=pd.to_datetime("2024-01-01"))
 risk_free_rate = st.sidebar.number_input("Risk-Free Rate (%)", min_value=0.0, value=2.0) / 100
