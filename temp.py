@@ -1,4 +1,5 @@
 import os
+os.system('pip seaborn')
 os.system('pip matplotlib')
 os.system('pip install yfinance')
 os.system('pip install scipy')
