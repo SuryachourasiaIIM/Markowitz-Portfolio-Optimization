@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 
 # Function to fetch adjusted close prices
 def get_data(tickers, start_date, end_date):
-    data = yf.download(tickers, start=start_date, end=end_date)['Adj Close']
+    data = yf.download(tickers, start=start_date, end=end_date)['Close']
     return data
 
 # Portfolio performance: return and volatility
