@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 def get_data(tickers, start_date, end_date):
     data = yf.download(tickers, start=start_date, end=end_date)
     if isinstance(data.columns, pd.MultiIndex):  # Handle multi-index
-        data = data['Adj Close']
+        data = data['Close']
     return data
 
 # Portfolio performance: return and volatility
