@@ -4,7 +4,7 @@ os.system('pip matplotlib')
 os.system('pip install yfinance')
 os.system('pip install scipy')
 os.system('pip install seaborn')
-pip install --upgrade yfinance
+os.system ('pip install --upgrade yfinance')
 import streamlit as st
 import numpy as np
 import pandas as pd
