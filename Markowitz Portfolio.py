@@ -87,7 +87,7 @@ st.title("Markowitz Portfolio Optimization")
 
 # Sidebar Inputs
 st.sidebar.markdown("""
-                    <p style='text-align: center; font-size: small; color: grey;'>Created by - Group 2</p>
+                    <p style='text-align: center; font-size: small; color: grey;'>Created by - Surya Chourasia</p>
                     <hr style='border-top: 1px solid #ccc; margin: 20px 0;'>
                      """,
                      unsafe_allow_html=True)
